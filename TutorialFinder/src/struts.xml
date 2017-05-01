@@ -3,13 +3,9 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
-	<!-- namespace defines that pages inside this package accessed as /webapp/namespace/action.action -->
 	<package name="default" extends="struts-default" namespace="/tutorials">
-		<!-- action for getTutorial.action path -->
 		<action name="getTutorial" class="com.mithyber.action.TutorialAction">
-			<!-- jsp depends on returned from execute String -->
 			<result name="success">/success.jsp</result>
-			<result name="failure">/error.jsp</result>
 		</action>
 	</package>
 </struts>
