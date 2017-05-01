@@ -8,4 +8,14 @@
 			<result name="success">/success.jsp</result>
 		</action>
 	</package>
+	<!-- <package name="login" extends="struts-default" namespace="/"> -->
+	<!-- <action name="login" class="com.mithyber.action.LoginAction"> -->
+	<!-- <result name="success">/searchForm.jsp</result> -->
+	<!-- <!-- <result name="failure">/login.jsp</result> -->
+	<!-- <result name="login">/login.jsp</result> -->
+	<!-- </action> -->
+	<!-- </package> -->
+	<!-- if u have a lot of packages and actions in one file, it's recommended 
+		to split data -->
+	<include file="login.xml" />
 </struts>
