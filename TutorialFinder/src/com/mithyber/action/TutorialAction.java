@@ -16,6 +16,16 @@ public class TutorialAction {
 	return "success";
     }
 
+    public String someOtherMethod() {
+	System.out.println("someOtherMethod()");
+	return "success";
+    }
+
+    public String addTutorial() {
+	System.out.println("addTutorial()");
+	return "success";
+    }
+
     public String getBestTutorialSite() {
 	return bestTutorialSite;
     }

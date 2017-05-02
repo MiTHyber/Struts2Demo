@@ -3,19 +3,47 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
+	<!-- extends means that this package extends configuration of struts-default 
+		package, that has interceptors and all other stuff -->
 	<package name="default" extends="struts-default" namespace="/tutorials">
-		<action name="getTutorial" class="com.mithyber.action.TutorialAction">
+	<!-- we can add interceptors by one or as stack - and we can choose default interseptor for whole package -->
+	<!-- <interceptor-ref name="paramPrepareParamsStack" /> -->
+		<!-- any getSomething goes to corresponding Something class -->
+		<!-- method changes method that gets executed from execute() to any other -->
+		<action name="get*" class="com.mithyber.action.{1}Action">
+	<!-- method="someOtherMethod"> -->
+			<result name="success">/success.jsp</result>
+		</action>
+		<action name="addTutorial" class="com.mithyber.action.TutorialAction"
+			method="addTutorial">
 			<result name="success">/success.jsp</result>
 		</action>
 	</package>
-	<!-- <package name="login" extends="struts-default" namespace="/"> -->
-	<!-- <action name="login" class="com.mithyber.action.LoginAction"> -->
-	<!-- <result name="success">/searchForm.jsp</result> -->
-	<!-- <!-- <result name="failure">/login.jsp</result> -->
-	<!-- <result name="login">/login.jsp</result> -->
-	<!-- </action> -->
-	<!-- </package> -->
+	<package name="loginSupport" extends="struts-default"
+		namespace="/">
+		<action name="loginSupport" class="com.mithyber.action.LoginActionSupport">
+			<result name="success">/searchForm.jsp</result>
+			<result name="login">/loginSupport.jsp</result>
+			<result name="input">/loginSupport.jsp</result>
+		</action>
+	</package>
 	<!-- if u have a lot of packages and actions in one file, it's recommended 
 		to split data -->
 	<include file="login.xml" />
+
+	<package name="seacrh" extends="struts-default" namespace="/">
+		<!-- class isn't needed for just redirection - struts2 has special dummy 
+			classes -->
+		<!-- simple wildcard -->
+		<!-- in case of conflicts more specific wins -->
+		<action name="search*">
+			<!-- whatever is matched by * is passed to {1} -->
+			<result>/search{1}.jsp</result>
+		</action>
+		<action name="searchForm">
+			<!-- it ignores result and always redirect to searchForm.jsp -->
+			<result>/searchForm.jsp</result>
+		</action>
+	</package>
+
 </struts>

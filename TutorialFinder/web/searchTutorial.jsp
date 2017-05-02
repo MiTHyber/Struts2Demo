@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Search form</title>
+<title>Search tutorial</title>
 </head>
 <body>
 	<!-- 	<form action="tutorials/getTutorial.action" method="post"> -->

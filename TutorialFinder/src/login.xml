@@ -5,7 +5,7 @@
 <struts>
 	<package name="login" extends="struts-default" namespace="/">
 		<action name="login" class="com.mithyber.action.LoginAction">
-			<result name="success">/searchForm.jsp</result>
+			<result name="success" type="redirect">searchForm</result>
 			<result name="login">/login.jsp</result>
 		</action>
 	</package>

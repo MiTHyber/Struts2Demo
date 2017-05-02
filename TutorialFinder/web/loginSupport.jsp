@@ -5,15 +5,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Search form</title>
+<title>LoginSupport</title>
 </head>
 <body>
-	<!-- 	<form action="tutorials/getTutorial.action" method="post"> -->
-	<!-- 		<input id="language" name="language" /> <input type="submit" /> -->
-	<!-- 	</form> -->
-	<!-- using struts2 tags instead of plain html -->
-	<s:form action="tutorials/getTutorial">
-		<s:textfield key="language" label="Enter the language u want to learn" />
+	<s:form action="loginSupport">
+		<!-- 		setting data to member object fields -->
+		<%-- 		<s:textfield key="user.login" label="Login" /> --%>
+		<%-- 		<s:password key="user.password" label="Password" /> --%>
+		<s:textfield key="login" label="Login" />
+		<s:password key="password" label="Password" />
 		<s:submit />
 	</s:form>
 </body>
